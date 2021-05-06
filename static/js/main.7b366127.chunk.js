@@ -1,2 +1,0 @@
-(this["webpackJsonpahi-les-paro"]=this["webpackJsonpahi-les-paro"]||[]).push([[0],{9:function(e,s,t){"use strict";t.r(s);t(1);var n=t(3),r=t.n(n),a=t(0),c=function(){return Object(a.jsx)("div",{className:"app",children:Object(a.jsx)("h1",{children:"Ah\xed les paro"})})};r.a.render(Object(a.jsx)(c,{}),document.getElementById("root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.7b366127.chunk.js.map
