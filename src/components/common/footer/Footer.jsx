@@ -32,7 +32,7 @@ function Footer() {
             </div>
           </div>
           <hr/>
-          <div className="footer-bottom">
+          <div className="row">
             <p className="text-xs-center">
               &copy;{new Date().getFullYear()} Ahí les paro | Comité de Comunicación
             </p>
