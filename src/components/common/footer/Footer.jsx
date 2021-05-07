@@ -32,8 +32,8 @@ function Footer() {
             </div>
           </div>
           <hr/>
-          <div className="row">
-            <p className="col-sm">
+          <div className="footer-bottom">
+            <p className="text-xs-center">
               &copy;{new Date().getFullYear()} Ahí les paro | Comité de Comunicación
             </p>
           </div>

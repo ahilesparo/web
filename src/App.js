@@ -11,6 +11,8 @@ const App = () => {
         <Navbar />
         <Hero />
         <PostContainer />
+        <br/>
+        <br/>
         <Footer />
       </div>
     </div>
