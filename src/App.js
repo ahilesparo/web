@@ -14,12 +14,17 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
-import logo from './img/logo.png'
+import logo from './img/logo.png';
+import logoHero from './img/logoHero.png';
 
 const useStyles = makeStyles((theme) => ({
   logo : {
     maxWidth : 150,
     marginRight : '10px'
+  },
+  logoHero : {
+    maxWidth : 400,
+    filter : 'drop-shadow(5px 5px 5px #222)',
   },
   appBar: {
     backgroundColor: "#000"
@@ -58,7 +63,7 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <div className="App">
+    <div className="App" styles="margin:0">
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <img src={logo} alt="Ahí les paro" className={classes.logo} />
@@ -66,7 +71,7 @@ const App = () => {
       </AppBar>
 
       <Box className={classes.hero}>
-        <Box>Ahí les paro</Box>
+        <img src={logoHero} alt="Ahí les paro" className={classes.logoHero} />
       </Box>
 
       <Container maxWidth="lg" className={classes.postContainer}>
