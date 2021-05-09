@@ -1,3 +1,5 @@
+import {Navbar, Footer} from '../../../components/common';
+
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,7 +12,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import ReactDOM from 'react-dom';
+import theme from '../../../Theme';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   postContainer : {
@@ -32,68 +37,115 @@ function PostContainer() {
   const classes = useStyles();
   
   return(
-    <Container maxWidth="lg" className={classes.postContainer}>
-      <Typography variant="h4" className={classes.postTitle}>
-        Publicaciones
-      </Typography>
+    <Router>
+      <Container maxWidth="lg" className={classes.postContainer}>
+        <Typography variant="h4" className={classes.postTitle}>
+          Publicaciones
+        </Typography>
 
-      <Grid container spacing={3}>
+        <Grid container spacing={3}>
 
-        <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.card}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    alt=""
+                    image="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111547.jpg"
+                    title="¿Y afuera nos están escuchando?"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    ¿Y afuera nos están escuchando?
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                    ¿Y afuera nos están escuchando?
+                    <br />
+                    Sí, y en varios países y ciudades extranjeras se ha dado apoyo a...
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <Link to="/post2">publicación completa</Link>
+                  </Button>
+                </CardActions>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={4}>
+            <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  alt=""
-                  image="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/182310398_163227658967015_209350030955755181_n.jpg"
-                  title="Atención"
+                  alt="Instagram nos está censurando"
+                  image="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-03.jpg"
+                  title="¿Cómo actuar ante situaciones de censura en Instagram?"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Atención
+                  Instagram nos está censurando
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Somos estudiantes de último semestre de Derecho y abogados grados que estamos dispuestos...
+                  Porque sabemos que hay posts e historias que se están censurando...
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  publicación completa
+                  <Link to="/post1">publicación completa</Link>
                 </Button>
               </CardActions>
-          </Card>
-        </Grid>
+            </Card>
+          </Grid>
 
-        <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                alt="Instagram nos está censurando"
-                image="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/181966496_1694397814097034_3527850825263021644_n.jpg"
-                title="Instagram nos está censurando"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                Instagram nos está censurando
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                Porque sabemos que hay historias que se están censurando...
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-              publicación completa
-              </Button>
-            </CardActions>
-          </Card>
         </Grid>
+        <Switch>
+          <Route path="/post1">
+            <Post1 />
+          </Route>
 
-      </Grid>
-    </Container>
+          <Route path="/post2">
+            <Post2 />
+          </Route>
+        </Switch>
+      </Container>
+    </Router>
   );
 }
+
+function Post1() {
+  ReactDOM.render(
+    <ThemeProvider theme={theme}>
+      <div styles="margin:0">
+      <Navbar />
+      <h1>Post 2</h1>
+
+      <br/>
+      <br/>
+      <Footer />
+    </div>
+    </ThemeProvider>
+    ,
+    document.getElementById("root")
+  );
+};
+
+function Post2() {
+  ReactDOM.render(
+    <ThemeProvider theme={theme}>
+      <div styles="margin:0">
+      <Navbar />
+      <h1>Post 2</h1>
+
+      <br/>
+      <br/>
+      <Footer />
+    </div>
+    </ThemeProvider>
+    ,
+    document.getElementById("root")
+  );
+};
 
 export default PostContainer;

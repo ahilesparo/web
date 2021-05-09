@@ -22,7 +22,9 @@ function Navbar() {
   return(
     <AppBar className={classes.appBar} position="static">
       <Toolbar>
-        <img src={logo} alt="Ahí les paro" className={classes.logo} />
+        <a href="http://ahilesparo.github.io/web">
+          <img src={logo} alt="Ahí les paro" className={classes.logo} />
+        </a>
       </Toolbar>
     </AppBar>
   );

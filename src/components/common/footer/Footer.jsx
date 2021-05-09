@@ -2,6 +2,7 @@ import './Footer.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
+import { SocialIcon } from 'react-social-icons';
 
 function Footer() {
 
@@ -13,21 +14,21 @@ function Footer() {
             <div className="col">
               <h4>Instagram</h4>
               <ul className="list-unstyled">
-                <li>Instagram</li>
+                <SocialIcon url="https://www.instagram.com/ahilesparocol" />
               </ul>
             </div>
             {/* column2 */}
             <div className="col">
               <h4>Facebook</h4>
               <ul className="list-unstyled">
-                <li>Facebook</li>
+                <SocialIcon url="https://www.facebook.com/Ahí-Les-Paro-105041358419301" />
               </ul>
             </div>
             {/* column3 */}
             <div className="col">
               <h4>Twitter</h4>
               <ul className="list-unstyled">
-                <li>Twitter</li>
+                <SocialIcon url="https://twitter.com/AhiLesParo" />
               </ul>
             </div>
           </div>
