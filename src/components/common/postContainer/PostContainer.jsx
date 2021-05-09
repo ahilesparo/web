@@ -1,7 +1,7 @@
 import {Navbar, Footer} from '../../../components/common';
+import './PostContainer.css'
 
 import React from 'react';
-
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -16,6 +16,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import theme from '../../../Theme';
 import { ThemeProvider } from '@material-ui/core/styles';
+import Carousel from 'react-bootstrap/Carousel'
 
 const useStyles = makeStyles((theme) => ({
   postContainer : {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   postTittle : {
     fontWeight : 800,
     paddingBottom : theme.spacing(3),
+    color: "white",
   },
   card : {
     maxWidtih : "100%",
@@ -67,7 +69,7 @@ function PostContainer() {
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" color="primary">
-                    <Link to="/post2">publicación completa</Link>
+                    <Link to="/afuera-nos-estan-escuchando">publicación completa</Link>
                   </Button>
                 </CardActions>
             </Card>
@@ -93,7 +95,7 @@ function PostContainer() {
               </CardActionArea>
               <CardActions>
                 <Button size="small" color="primary">
-                  <Link to="/post1">publicación completa</Link>
+                  <Link to="/instagram-nos-censura">publicación completa</Link>
                 </Button>
               </CardActions>
             </Card>
@@ -101,11 +103,11 @@ function PostContainer() {
 
         </Grid>
         <Switch>
-          <Route path="/post1">
+          <Route path="/instagram-nos-censura">
             <Post1 />
           </Route>
 
-          <Route path="/post2">
+          <Route path="/afuera-nos-estan-escuchando">
             <Post2 />
           </Route>
         </Switch>
@@ -117,14 +119,95 @@ function PostContainer() {
 function Post1() {
   ReactDOM.render(
     <ThemeProvider theme={theme}>
-      <div styles="margin:0">
-      <Navbar />
-      <h1>Post 2</h1>
+      <div className="Post">
+        <div className="content-wrap">
+          <Navbar />
+          
+          <div className="show-images">
+            <h1 className="post-title">Instagram nos está censurando</h1>
+            <Carousel interval={100000000} nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />} nextLabel="Sig" prevLabel="Ant">
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-03.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-08.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-06.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-02.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-00.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-04-57.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-12.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-09.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-11.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post1/photo_2021-05-08_17-05-05.jpg"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </div>
 
-      <br/>
-      <br/>
-      <Footer />
-    </div>
+          <p className="post-text">
+            Porque sabemos que hay post e historias que se están censurando, les compartimos estas recomendaciones para que puedan seguir apoyando en redes sociales, la situación Nacional.<br/>
+            Cuéntenos si les han servido y si tienen más tips para recomendar a nuestros compañeros.</p>
+
+          <br/>
+          <br/>
+          <Footer />
+        </div>
+      </div>
     </ThemeProvider>
     ,
     document.getElementById("root")
@@ -134,14 +217,62 @@ function Post1() {
 function Post2() {
   ReactDOM.render(
     <ThemeProvider theme={theme}>
-      <div styles="margin:0">
-      <Navbar />
-      <h1>Post 2</h1>
+      <div className="Post">
+        <div className="content-wrap">
+          <Navbar />
+          
+          <div className="show-images">
+            <h1 className="post-title">¿Y afuera nos están escuchando?</h1>
+            <Carousel interval={100000000} nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />} nextLabel="Sig" prevLabel="Ant">
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111547.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111554.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111600.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111606.jpg"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                className="d-block w-100"
+                alt=""
+                src="https://raw.githubusercontent.com/ahilesparo/web/master/src/img/posts/Post2/SAVE_20210508_111612.jpg"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </div>
 
-      <br/>
-      <br/>
-      <Footer />
-    </div>
+          <p className="post-text">
+            Sí, y en varios países y ciudades extranjeras se ha dado apoyo a todas las personas que han sufrido de tratos desmedidos de la fuerza pública y detenciones ilegales . La situación en Colombia es muy delicada y se hace todo lo posible por mostrar afuera lo que aqueja a nuestro pueblo.<br />
+
+            ¿Cuéntanos, qué otros apoyos internacionales has visto?
+          </p>
+
+          <br/>
+          <br/>
+          <Footer />
+        </div>
+      </div>
     </ThemeProvider>
     ,
     document.getElementById("root")
